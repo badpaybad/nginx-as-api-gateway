@@ -16,7 +16,7 @@ We can use with single domain to proxy pass by part of url to each service. Desi
 
 # docker file
 
-                    # we build and for each upstream
+                    # we build and run for each upstream
 
                     docker build -f "Dockerfile" -t a-nginxapigateway-test .
 
@@ -26,7 +26,7 @@ We can use with single domain to proxy pass by part of url to each service. Desi
 
                     docker run -it --rm -p 8888:80 --name a_nginxasapigateway_8887  a-nginxapigateway-test
 
-                    #  we build for api gateway 
+                    #  we build and run for api gateway 
                     docker build -f "nginx.Dockerfile" -t a-nginxasapigateway .
 
                     docker run -it --rm -p 80:80 --name a-nginxasapigateway_80  a-nginxasapigateway
