@@ -24,7 +24,7 @@ We can use with single domain to proxy pass by part of url to each service. Desi
 
                     docker run -it --rm -p 8887:80 --name a_nginxasapigateway_8887  a-nginxapigateway-test
 
-                    docker run -it --rm -p 8888:80 --name a_nginxasapigateway_8887  a-nginxapigateway-test
+                    docker run -it --rm -p 8888:80 --name a_nginxasapigateway_8888  a-nginxapigateway-test
 
                     #  we build and run for api gateway 
                     docker build -f "nginx.Dockerfile" -t a-nginxasapigateway .
