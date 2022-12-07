@@ -12,17 +12,8 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 
-#docker build --build-arg  NUGETUID="user"
-ARG NUGETUID="user"
-ARG NUGETPWD="123@123"
-
 WORKDIR /src 
 COPY ["/nginxapigateway/", "nginxapigateway/"]
-
-#https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source
-#RUN dotnet nuget add source "http://118.70.117.208:8123/nuget" --name "omt" --username "${NUGETUID}" --password "${NUGETPWD}" --store-password-in-clear-text
-RUN dotnet nuget add source "https://longbien.omt.vn:9991/nuget" --name "omt" --username "${NUGETUID}" --password "${NUGETPWD}" --store-password-in-clear-text
-#dotnet nuget add source "https://longbien.omt.vn:9991/nuget" --name "omt" --username "user" --password "123@123" --store-password-in-clear-text
 
 RUN dotnet restore "./nginxapigateway/nginxapigateway.csproj"
 
